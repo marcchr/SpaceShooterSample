@@ -4,11 +4,14 @@ public class MeteorSpawner : MonoBehaviour, IIntervalSpawner
 {
     [SerializeField] private Transform[] _spawnPoints;
     public Transform[] SpawnPoints => _spawnPoints;
-    [SerializeField] private float _spawnRadius;
+
     [SerializeField] private float _spawnInterval;
     public float Interval => _spawnInterval;
+
     [SerializeField] private GameObject _meteorPrefab;
     public GameObject SpawnObjectPrefab => _meteorPrefab;
+
+    [SerializeField] private float _spawnRadius;
     [SerializeField] private Transform _planetTransform;
 
     private float _elapsedTime;

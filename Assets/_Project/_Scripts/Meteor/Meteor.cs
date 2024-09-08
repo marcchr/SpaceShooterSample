@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Meteor : Projectile, IDamageable
 {
+    #region Health
     [Header("Health")]
     [SerializeField] private float _maxHealth = 5f;
     private float _currentHealth;
@@ -41,6 +42,7 @@ public class Meteor : Projectile, IDamageable
             Destroy(gameObject);
         }
     }
+    #endregion
 
     public override void Move(Vector2 upDirection)
     {
@@ -57,5 +59,14 @@ public class Meteor : Projectile, IDamageable
         {
             Destroy(gameObject);
         }
+    }
+
+    [Header("Appearance")]
+    [SerializeField] SpriteRenderer _spriteRenderer;
+    [SerializeField] Sprite[] _sprites;
+
+    private void Start()
+    {
+        _spriteRenderer.sprite = _sprites[Random.Range(0, _sprites.Length)];
     }
 }
