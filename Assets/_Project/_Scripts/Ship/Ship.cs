@@ -4,14 +4,25 @@ public abstract class Ship : MonoBehaviour, IPhysicsMovable, IDamageable
 {
     #region Health
     [Header("Health")]
-    [SerializeField] private Health _health;
+    [SerializeField] private float _maxHealth = 5f;
+    private Health _health;
     public Health Health => _health;
     public bool IsDestroyed => _health.IsDepleted;
     public virtual void TakeDamage(float damageAmount)
     {
         _health.CurrentHealth -= damageAmount;
     }
+
+    public Health InitializeHealth(float maxHealth)
+    {
+        return new(maxHealth);
+    }
     #endregion
+
+    private void Awake()
+    {
+        _health = InitializeHealth(_maxHealth);
+    }
 
     #region Movement
     [Header("Movement")]

@@ -75,6 +75,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 5424564017332903326}
   _movementSpeed: 10
+  _damageAmount: 1
 --- !u!1 &7580683778249797682
 GameObject:
   m_ObjectHideFlags: 0

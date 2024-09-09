@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerShip : Ship, IShooter
 {
     [Header("Shooting")]
-    [SerializeField] private Bullet _bullet;
-    public Bullet Bullet => _bullet;
+    [SerializeField] private Projectile _bullet;
+    public Projectile Projectile => _bullet;
     [SerializeField] private Transform[] _spawnPoints;
     public Transform[] SpawnPoints => _spawnPoints;
 

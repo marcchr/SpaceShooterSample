@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4724480241748807688}
   - component: {fileID: 7584234931717032584}
+  - component: {fileID: 7258067087482505547}
   m_Layer: 0
   m_Name: Meteor
   m_TagString: Untagged
@@ -165,7 +166,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -180,3 +181,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7258067087482505547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3223179498951190371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c209fadf3262d514e910a739413591d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 7584234931717032584}
+  _movementSpeed: 250
+  _damageAmount: 10
+  _maxHealth: 5

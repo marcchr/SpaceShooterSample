@@ -3,6 +3,6 @@ using UnityEngine;
 public interface IShooter
 {
     Transform[] SpawnPoints { get; }
-    Bullet Bullet { get; }
+    Projectile Projectile { get; }
     abstract void Shoot(Vector2 upDirection);
 }

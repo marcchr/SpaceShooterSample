@@ -18,4 +18,14 @@ public class Health
             IsDepleted = _currentHealth == 0f;
         }
     }
+
+    public Health()
+    {
+        CurrentHealth = MaxHealth;
+    }
+    public Health(float maxHealth)
+    {
+        MaxHealth = maxHealth;
+        CurrentHealth = MaxHealth;
+    }
 }
