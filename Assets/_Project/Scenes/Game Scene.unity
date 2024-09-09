@@ -879,6 +879,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1398039160
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398039161}
+  - component: {fileID: 1398039162}
+  m_Layer: 0
+  m_Name: Enemy Ship Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1398039161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398039160}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2049996347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1398039162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398039160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49ba621621cfeb540adcf7de22284324, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 1630219434}
+  - {fileID: 916689889}
+  - {fileID: 1543130244}
+  - {fileID: 789682757}
+  _spawnRadius: 5
+  _interval: 5
+  _enemyShipPrefab: {fileID: 9042617024688429244, guid: 411f47bf695476c49ae822edc774b176, type: 3}
+  _planetTransform: {fileID: 1150416397}
 --- !u!1 &1436031313
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,7 +948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1436031314
 Transform:
   m_ObjectHideFlags: 0
@@ -928,9 +981,9 @@ MonoBehaviour:
   - {fileID: 916689889}
   - {fileID: 1543130244}
   - {fileID: 789682757}
-  _spawnRadius: 5
   _spawnInterval: 5
   _meteorPrefab: {fileID: 3223179498951190371, guid: 278a86e454862d54ea6298120b73263f, type: 3}
+  _spawnRadius: 5
   _planetTransform: {fileID: 1150416397}
 --- !u!1 &1543130243
 GameObject:
@@ -1332,6 +1385,7 @@ Transform:
   m_Children:
   - {fileID: 737934532}
   - {fileID: 1436031314}
+  - {fileID: 1398039161}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
