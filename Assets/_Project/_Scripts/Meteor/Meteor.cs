@@ -2,38 +2,48 @@ using UnityEngine;
 
 public class Meteor : Projectile, IDamageable
 {
-    [SerializeField] private float _maxHealth;
-    private Health _health;
-    public Health Health => _health;
+    [Header("Health")]
+    [SerializeField] private float _maxHealth = 5f;
+    private float _currentHealth;
+    private bool _isDestroyed;
 
-    public bool IsDestroyed => _health.IsDepleted;
+    public float MaxHealth => _maxHealth;
 
-    public Health InitializeHealth(float maxHealth)
+    public float CurrentHealth
     {
-        return new(maxHealth);
+        get
+        {
+            // Start from the MaxHealth if the default value is zero
+            if (_currentHealth == 0 && !_isDestroyed)
+            {
+                return MaxHealth;
+            }
+            else
+            {
+                return _currentHealth;
+            }
+        }
+
+        private set
+        {
+            _currentHealth = Mathf.Clamp(value, 0f, MaxHealth);
+            _isDestroyed = _currentHealth == 0;
+        }
     }
-    private void Awake()
-    {
-        _health = InitializeHealth(_maxHealth);
-    }
 
-    public override void Move(Vector2 upDirection)
-    {
-        Rigidbody2D.AddForce(upDirection * MovementSpeed);
-    }
+    public bool IsDestroyed => _isDestroyed;
 
-    public void TakeDamage(float damageAmount)
+    public virtual void TakeDamage(float damageAmount)
     {
-        _health.CurrentHealth -= damageAmount;
-        print($"{name}: {_health.CurrentHealth}/{_health.MaxHealth}");
+        CurrentHealth -= damageAmount;
         if (IsDestroyed)
         {
             Destroy(gameObject);
         }
     }
 
-    protected override void OnTriggerEnter2D(Collider2D other)
+    public override void Move(Vector2 upDirection)
     {
-        base.OnTriggerEnter2D(other);
+        Rigidbody2D.AddForce(upDirection * MovementSpeed);
     }
 }

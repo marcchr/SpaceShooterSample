@@ -3,22 +3,38 @@ using UnityEngine;
 public class Planet : MonoBehaviour, IDamageable
 {
     [SerializeField] private float _maxHealth = 100f;
-    private Health _health;
-    public Health Health => _health;
+    private float _currentHealth;
+    private bool _isDestroyed;
 
-    public bool IsDestroyed => _health.IsDepleted;
+    public float MaxHealth => _maxHealth;
 
-    public Health InitializeHealth(float maxHealth)
+    public float CurrentHealth
     {
-        return new(maxHealth);
+        get
+        {
+            // Start from the MaxHealth if the default value is zero
+            if (_currentHealth == 0 && !_isDestroyed)
+            {
+                return MaxHealth;
+            }
+            else
+            {
+                return _currentHealth;
+            }
+        }
+
+        private set
+        {
+            _currentHealth = Mathf.Clamp(value, 0f, MaxHealth);
+            _isDestroyed = _currentHealth == 0;
+        }
     }
-    private void Awake()
-    {
-        _health = InitializeHealth(_maxHealth);
-    }
+
+    public bool IsDestroyed => _isDestroyed;
+
     public void TakeDamage(float damageAmount)
     {
-        _health.CurrentHealth -= damageAmount;
-        print($"{_health.CurrentHealth}/{_health.MaxHealth}");
+        CurrentHealth -= damageAmount;
+        print($"{name}: {CurrentHealth}/{MaxHealth}");
     }
 }

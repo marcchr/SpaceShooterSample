@@ -1,7 +1,7 @@
 public interface IDamageable
 {
-    Health Health { get; }
+    float MaxHealth { get; }
+    float CurrentHealth { get; }
     bool IsDestroyed { get; }
-    Health InitializeHealth(float maxHealth);
     abstract void TakeDamage(float damageAmount);
 }
