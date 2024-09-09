@@ -194,6 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 7584234931717032584}
-  _movementSpeed: 250
+  _movementSpeed: 100
   _damageAmount: 10
-  _maxHealth: 5
+  _maxHealth: 10

@@ -847,8 +847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827624a174af7b14ea82e4c4e58ee140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health:
-    <MaxHealth>k__BackingField: 100
+  _maxHealth: 100
 --- !u!1 &1277248928
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,15 +923,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9049ab11c7d99664999826228054761a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _planetTransform: {fileID: 1150416397}
   _spawnPoints:
   - {fileID: 1630219434}
   - {fileID: 916689889}
   - {fileID: 1543130244}
   - {fileID: 789682757}
-  _spawnRadius: 20
+  _spawnRadius: 5
   _spawnInterval: 5
-  _meteor: {fileID: 7258067087482505547, guid: 278a86e454862d54ea6298120b73263f, type: 3}
+  _meteorPrefab: {fileID: 3223179498951190371, guid: 278a86e454862d54ea6298120b73263f, type: 3}
+  _planetTransform: {fileID: 1150416397}
 --- !u!1 &1543130243
 GameObject:
   m_ObjectHideFlags: 0

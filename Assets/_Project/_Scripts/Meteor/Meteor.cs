@@ -46,4 +46,16 @@ public class Meteor : Projectile, IDamageable
     {
         Rigidbody2D.AddForce(upDirection * MovementSpeed);
     }
+
+    protected override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+
+        // We only destroy the meteor in the bounds if it has been blown off-course by the player
+        // This is because the meteors can spawn beyond the bounds based on our MeteorSpawner script
+        if (CurrentHealth < MaxHealth && other.CompareTag("Bounds"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
