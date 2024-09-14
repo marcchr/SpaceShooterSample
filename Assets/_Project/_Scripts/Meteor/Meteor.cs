@@ -7,6 +7,7 @@ public class Meteor : Projectile, IDamageable
     [SerializeField] private GameObject[] _powerupPrefab;
 
     public Transform _powerupAnchor;
+    public ParticleSystem destructionEffect;
     private Vector2 directionToPlanet;
 
     #region Health
@@ -47,7 +48,11 @@ public class Meteor : Projectile, IDamageable
         if (IsDestroyed)
         {
             DropPowerup();
+            ParticleSystem explosionEffect = Instantiate(destructionEffect) as ParticleSystem;
+            explosionEffect.transform.position = transform.position;
+
             Destroy(gameObject);
+
         }
     }
     #endregion

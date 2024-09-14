@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 69510115}
   - component: {fileID: 69510117}
   - component: {fileID: 69510116}
+  - component: {fileID: 69510118}
   m_Layer: 3
   m_Name: Skybox Image
   m_TagString: Untagged
@@ -300,6 +301,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69510114}
   m_CullTransparentMesh: 1
+--- !u!114 &69510118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69510114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7ec22c7511b1e4ab31f43f3ca45d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody2D: {fileID: 0}
+  _movementSpeed: 100
+  _damageAmount: 0
+  _planetTransform: {fileID: 0}
 --- !u!1 &490250993
 GameObject:
   m_ObjectHideFlags: 0

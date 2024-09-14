@@ -230,7 +230,10 @@ MonoBehaviour:
   _damageAmount: 10
   _powerupPrefab:
   - {fileID: 4130105283110602702, guid: 49722cc1346dd3946867972042e5cc15, type: 3}
+  - {fileID: 1230535630681489990, guid: c6c41ca5f72ce0246b3aadaf29e335e6, type: 3}
+  - {fileID: 4267023296716667138, guid: e9d90e80251c3d0489e2cfa2e3113d54, type: 3}
   _powerupAnchor: {fileID: 286378115692070535}
+  destructionEffect: {fileID: 8514827942644837579, guid: 2746f96bb9c2a2a4f9129a5131dd82fd, type: 3}
   _maxHealth: 5
   _spriteRenderer: {fileID: 3384117598952805849}
   _sprites:

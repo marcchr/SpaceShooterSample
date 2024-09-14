@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyShip : Ship, IShooter
 {
+    public ParticleSystem destructionEffect;
+
     #region Shooting
     [Header("Shooting")]
     [SerializeField] private Transform[] _spawnPoints;
@@ -78,6 +80,10 @@ public class EnemyShip : Ship, IShooter
     {
         base.TakeDamage(damageAmount);
         if (!IsDestroyed) { return; }
+
+        ParticleSystem explosionEffect = Instantiate(destructionEffect) as ParticleSystem;
+        explosionEffect.transform.position = transform.position;
+
         Destroy(gameObject);
     }
 }

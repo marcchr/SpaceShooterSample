@@ -76,6 +76,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 5424564017332903326}
   _movementSpeed: 10
   _damageAmount: 1
+  destructionEffect: {fileID: 1035362555946204291, guid: 3a319e0601242cc46951d2bcbc1fd81b, type: 3}
 --- !u!1 &7580683778249797682
 GameObject:
   m_ObjectHideFlags: 0
