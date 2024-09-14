@@ -8,6 +8,13 @@ public class PlayerShip : Ship, IShooter
     [SerializeField] private Transform[] _spawnPoints;
     public Transform[] SpawnPoints => _spawnPoints;
 
+    public PlayerShipController Controller { get; private set; }
+
+    public void Init(PlayerShipController controller)
+    {
+        Controller = controller;
+    }
+
     public void Shoot(Vector2 upDirection)
     {
         foreach (var spawnPoint in _spawnPoints)
@@ -16,4 +23,5 @@ public class PlayerShip : Ship, IShooter
             bullet.Move(upDirection);
         }
     }
+
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bounds
   - Planet
+  - Ship
   layers:
   - Default
   - TransparentFX

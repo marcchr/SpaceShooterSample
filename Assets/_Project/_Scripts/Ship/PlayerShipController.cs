@@ -7,17 +7,19 @@ public class PlayerShipController : MonoBehaviour
     [SerializeField] private Transform _playerShipAnchor;
 
     private PlayerShip _currentShip;
+    public float SpeedMultiplier;
 
     private void Start()
     {
         _currentShip = Instantiate(_playerShipPrefab, _playerShipAnchor);
+        _currentShip.Init(this);
         _currentShip.transform.position += (Vector3)_shipSpawnOffset;
     }
 
     private void Update()
     {
         var direction = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
-        _playerShipAnchor.Rotate(Vector3.forward, -direction.x * _currentShip.MovementSpeed * Time.deltaTime);
+        _playerShipAnchor.Rotate(Vector3.forward, -direction.x * _currentShip.MovementSpeed * SpeedMultiplier * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

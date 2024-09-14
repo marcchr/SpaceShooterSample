@@ -12,14 +12,32 @@ public class Powerup : Projectile
         Rigidbody2D.AddForce(upDirection * MovementSpeed);
 
     }
+
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
+        if (other.attachedRigidbody.CompareTag("Ship"))
+        {
+            Debug.Log("Power up picked up!");
+            PickUp(other);
+        }
         if (other.CompareTag("Bounds"))
         {
             Destroy(gameObject);
         }
+        
     }
 
+    public void PickUp(Collider2D player)
+    {
+
+        if (player.attachedRigidbody.TryGetComponent<PlayerShip>(out var ship))
+        {
+            ship.Controller.SpeedMultiplier += 2;
+            Debug.Log("Speed increased");
+        }
+
+        Destroy(gameObject);
+    }
    
 }

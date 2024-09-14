@@ -50,6 +50,7 @@ public class Meteor : Projectile, IDamageable
             DropPowerup();
             ParticleSystem explosionEffect = Instantiate(destructionEffect) as ParticleSystem;
             explosionEffect.transform.position = transform.position;
+            Destroy(explosionEffect.gameObject, explosionEffect.duration);
 
             Destroy(gameObject);
 

@@ -116,7 +116,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -148,7 +148,6 @@ MonoBehaviour:
   _movementSpeed: 100
   _damageAmount: 0
   _planetTransform: {fileID: 0}
-  _powerup: {fileID: 4130105283110602702}
 --- !u!50 &-6040158266644065480
 Rigidbody2D:
   serializedVersion: 4

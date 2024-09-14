@@ -491,6 +491,7 @@ MonoBehaviour:
   _shipSpawnOffset: {x: 0, y: 5}
   _playerShipPrefab: {fileID: 4509881961701297161, guid: f1fd1d2acc3f6b445958e4c138ba39ac, type: 3}
   _playerShipAnchor: {fileID: 1867468558}
+  SpeedMultiplier: 1
 --- !u!1 &789682756
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1398039161
 Transform:
   m_ObjectHideFlags: 0
