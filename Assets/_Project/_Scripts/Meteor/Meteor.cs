@@ -68,7 +68,10 @@ public class Meteor : Projectile, IDamageable
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
-        
+
+        ParticleSystem explosionEffect = Instantiate(destructionEffect) as ParticleSystem;
+        explosionEffect.transform.position = transform.position;
+        Destroy(explosionEffect.gameObject, explosionEffect.duration);
 
         // We only destroy the meteor in the bounds if it has been blown off-course by the player
         // This is because the meteors can spawn beyond the bounds based on our MeteorSpawner script

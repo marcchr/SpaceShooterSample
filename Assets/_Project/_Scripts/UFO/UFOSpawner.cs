@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UFOSpawner : MonoBehaviour, IIntervalSpawner
+public class EnemyShipSpawner : MonoBehaviour, IIntervalSpawner
 {
     [SerializeField] private Transform[] _spawnPoints;
     public Transform[] SpawnPoints => _spawnPoints;
@@ -32,7 +32,7 @@ public class UFOSpawner : MonoBehaviour, IIntervalSpawner
 
     private void SpawnShips(Transform planetTransform)
     {
-        var ship = Instantiate(SpawnObjectPrefab, (Vector2)SpawnPoints[Random.Range(0, SpawnPoints.Length)].position + Random.insideUnitCircle * _spawnRadius, Quaternion.identity).GetComponent<EnemyShip>();
+        var ship = Instantiate(SpawnObjectPrefab, (Vector2)SpawnPoints[Random.Range(0, SpawnPoints.Length)].position + Random.insideUnitCircle * _spawnRadius, Quaternion.identity).GetComponent<UFO>();
         ship.Init(planetTransform);
     }
 }

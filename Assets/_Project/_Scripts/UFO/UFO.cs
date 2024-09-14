@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShip : Ship, IShooter
+public class UFO : Ship
 {
     public ParticleSystem destructionEffect;
 
@@ -51,6 +51,7 @@ public class EnemyShip : Ship, IShooter
         transform.up = _directionToPlanet;
         _isWithinShootingRange = _directionToPlanet.sqrMagnitude < _distanceThreshold * _distanceThreshold;
 
+       
         if (_isWithinShootingRange)
         {
             if (_elapsedTime < _interval)

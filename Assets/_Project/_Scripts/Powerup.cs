@@ -33,7 +33,7 @@ public class Powerup : Projectile
 
         if (player.attachedRigidbody.TryGetComponent<PlayerShip>(out var ship))
         {
-            ship.Controller.SpeedMultiplier += 2;
+            ship.Controller.SpeedMultiplier += 1;
             Debug.Log("Speed increased");
         }
 

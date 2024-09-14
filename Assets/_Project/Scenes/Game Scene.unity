@@ -914,7 +914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1398039161
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,6 +1004,59 @@ MonoBehaviour:
   _maxSpawnInterval: 5
   _meteorPrefab: {fileID: 3223179498951190371, guid: 278a86e454862d54ea6298120b73263f, type: 3}
   _spawnRadius: 5
+  _planetTransform: {fileID: 1150416397}
+--- !u!1 &1509728191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1509728192}
+  - component: {fileID: 1509728193}
+  m_Layer: 0
+  m_Name: UFO Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1509728192
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509728191}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2049996347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509728193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509728191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67df00b2903693f42aba7dcccee6b767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnPoints:
+  - {fileID: 1630219434}
+  - {fileID: 916689889}
+  - {fileID: 1543130244}
+  - {fileID: 789682757}
+  _spawnRadius: 5
+  _interval: 5
+  _enemyShipPrefab: {fileID: 2060630831244792312, guid: e64e56b623a04664b9eecc06bc1aba2c, type: 3}
   _planetTransform: {fileID: 1150416397}
 --- !u!1 &1543130243
 GameObject:
@@ -1406,6 +1459,7 @@ Transform:
   - {fileID: 737934532}
   - {fileID: 1436031314}
   - {fileID: 1398039161}
+  - {fileID: 1509728192}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
