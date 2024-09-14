@@ -55,7 +55,7 @@ MonoBehaviour:
   _spawnPoints:
   - {fileID: 1742074225117334621}
   _bullet: {fileID: 7483549760044142057, guid: 6b997a2fa0361f0459a4ee5749f0e9d6, type: 3}
-  _interval: 1
+  _interval: 2
   _minDistanceThreshold: 8
   _maxDistanceThreshold: 8
 --- !u!50 &973581171890505074

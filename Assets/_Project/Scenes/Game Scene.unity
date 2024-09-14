@@ -948,7 +948,7 @@ MonoBehaviour:
   - {fileID: 1543130244}
   - {fileID: 789682757}
   _spawnRadius: 5
-  _interval: 5
+  _interval: 12
   _enemyShipPrefab: {fileID: 9042617024688429244, guid: 411f47bf695476c49ae822edc774b176, type: 3}
   _planetTransform: {fileID: 1150416397}
 --- !u!1 &1436031313
@@ -1055,7 +1055,7 @@ MonoBehaviour:
   - {fileID: 1543130244}
   - {fileID: 789682757}
   _spawnRadius: 5
-  _interval: 5
+  _interval: 12
   _enemyShipPrefab: {fileID: 2060630831244792312, guid: e64e56b623a04664b9eecc06bc1aba2c, type: 3}
   _planetTransform: {fileID: 1150416397}
 --- !u!1 &1543130243
