@@ -120,6 +120,37 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.505
+--- !u!1 &2989861631844949414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286378115692070535}
+  m_Layer: 0
+  m_Name: Drop Powerup Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286378115692070535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2989861631844949414}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4724480241748807688}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3223179498951190371
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +183,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2468706366099348374}
+  - {fileID: 286378115692070535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &7584234931717032584
@@ -196,7 +228,10 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 7584234931717032584}
   _movementSpeed: 100
   _damageAmount: 10
-  _maxHealth: 10
+  _powerupPrefab:
+  - {fileID: 4130105283110602702, guid: 49722cc1346dd3946867972042e5cc15, type: 3}
+  _powerupAnchor: {fileID: 286378115692070535}
+  _maxHealth: 5
   _spriteRenderer: {fileID: 3384117598952805849}
   _sprites:
   - {fileID: 21300000, guid: e4e9f56d1cc97e044bd99c43d5a28760, type: 3}

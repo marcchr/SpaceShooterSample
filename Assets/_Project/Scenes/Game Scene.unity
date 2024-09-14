@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -981,7 +982,8 @@ MonoBehaviour:
   - {fileID: 916689889}
   - {fileID: 1543130244}
   - {fileID: 789682757}
-  _spawnInterval: 5
+  _minSpawnInterval: 3
+  _maxSpawnInterval: 5
   _meteorPrefab: {fileID: 3223179498951190371, guid: 278a86e454862d54ea6298120b73263f, type: 3}
   _spawnRadius: 5
   _planetTransform: {fileID: 1150416397}

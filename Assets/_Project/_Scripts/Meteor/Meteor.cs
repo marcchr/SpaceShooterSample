@@ -1,7 +1,14 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Meteor : Projectile, IDamageable
 {
+    [SerializeField] const float _dropChance = 10f / 10f;
+    [SerializeField] private GameObject[] _powerupPrefab;
+
+    public Transform _powerupAnchor;
+    private Vector2 directionToPlanet;
+
     #region Health
     [Header("Health")]
     [SerializeField] private float _maxHealth = 5f;
@@ -39,6 +46,7 @@ public class Meteor : Projectile, IDamageable
         CurrentHealth -= damageAmount;
         if (IsDestroyed)
         {
+            DropPowerup();
             Destroy(gameObject);
         }
     }
@@ -47,11 +55,14 @@ public class Meteor : Projectile, IDamageable
     public override void Move(Vector2 upDirection)
     {
         Rigidbody2D.AddForce(upDirection * MovementSpeed);
+        directionToPlanet = upDirection;
+        
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
+        
 
         // We only destroy the meteor in the bounds if it has been blown off-course by the player
         // This is because the meteors can spawn beyond the bounds based on our MeteorSpawner script
@@ -68,5 +79,14 @@ public class Meteor : Projectile, IDamageable
     private void Start()
     {
         _spriteRenderer.sprite = _sprites[Random.Range(0, _sprites.Length)];
+    }
+
+    public void DropPowerup()
+    {
+            if (Random.Range(0f, 1f) <= _dropChance)
+            {
+                var powerup = Instantiate(_powerupPrefab[Random.Range(0, _powerupPrefab.Length)], _powerupAnchor.position, Quaternion.identity).GetComponent<Powerup>();
+                powerup.Move(directionToPlanet);
+            }
     }
 }
