@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Planet : MonoBehaviour, IDamageable
 {
@@ -7,6 +8,7 @@ public class Planet : MonoBehaviour, IDamageable
     private bool _isDestroyed;
 
     public float MaxHealth => _maxHealth;
+    public Image HealthBar;
 
     public float CurrentHealth
     {
@@ -35,6 +37,7 @@ public class Planet : MonoBehaviour, IDamageable
     public void TakeDamage(float damageAmount)
     {
         CurrentHealth -= damageAmount;
+        HealthBar.fillAmount = CurrentHealth / MaxHealth;
         print($"{name}: {CurrentHealth}/{MaxHealth}");
     }
 }
