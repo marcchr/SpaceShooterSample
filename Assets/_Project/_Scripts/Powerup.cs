@@ -28,7 +28,7 @@ public class Powerup : Projectile
         
     }
 
-    public void PickUp(Collider2D player)
+    public virtual void PickUp(Collider2D player)
     {
 
         if (player.attachedRigidbody.TryGetComponent<PlayerShip>(out var ship))

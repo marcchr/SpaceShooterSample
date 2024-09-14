@@ -9,6 +9,12 @@ public class PlayerShip : Ship, IShooter
     public Transform[] SpawnPoints => _spawnPoints;
 
     public PlayerShipController Controller { get; private set; }
+    public Planet Planet { get; private set; }
+
+    public void PlanetInit(Planet planet)
+    {
+        Planet = planet;
+    }
 
     public void Init(PlayerShipController controller)
     {

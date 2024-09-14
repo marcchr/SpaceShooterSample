@@ -10,6 +10,13 @@ public class Planet : MonoBehaviour, IDamageable
     public float MaxHealth => _maxHealth;
     public Image HealthBar;
 
+    private PlayerShip thisPlanet;
+
+    private void Start()
+    {
+        thisPlanet.PlanetInit(this);
+    }
+
     public float CurrentHealth
     {
         get

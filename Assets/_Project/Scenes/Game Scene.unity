@@ -1002,8 +1002,8 @@ MonoBehaviour:
   - {fileID: 916689889}
   - {fileID: 1543130244}
   - {fileID: 789682757}
-  _minSpawnInterval: 3
-  _maxSpawnInterval: 5
+  _minSpawnInterval: 5
+  _maxSpawnInterval: 8
   _meteorPrefab: {fileID: 3223179498951190371, guid: 278a86e454862d54ea6298120b73263f, type: 3}
   _spawnRadius: 5
   _planetTransform: {fileID: 1150416397}
